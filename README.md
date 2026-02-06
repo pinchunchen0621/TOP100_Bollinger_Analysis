@@ -39,13 +39,18 @@
 - `alpha=0.3`：畫圖時設定的透明度。因為線疊在一起會看不清楚，設成 0.3 (半透明) 可以看清楚網格跟重疊的部分。
 - `window=20`：使用標準的 20 日移動平均。
 
+## 檔案清單
+- `bollinger_bands.ipynb`：主程式 (Run All 即可)。
+- `TOP100除權息.csv`：原始資料。
+  - 重要欄位：`bb_width` (個股帶寬)、`sector_avg_width` (產業平均帶寬)。
+
 ## 如何應用在模型中 (參考)
 這些欄位可以直接替換原本的「固定 % 數」，讓模型變成動態調整：
 
-| 應用場景 | 你的變數 (DataFrame Column) | 邏輯說明 |
+| 應用場景 | 你的變數 | 邏輯說明 |
 | :--- | :--- | :--- |
-| **Stop Loss** | `lower` (下軌) | 跌破下軌即停損 (比固定 5% 更抗震) |
-| **Take Profit** | `upper` (上軌) | 碰到上軌或跌回上軌內再出 (比固定 10% 能吃到更多魚尾) |
+| **Stop Loss** | `lower` (下軌) | 跌破下軌即停損 |
+| **Take Profit** | `upper` (上軌) | 碰到上軌或跌回上軌內再出 |
 | **Filter** | `bb_width` vs `sector_avg_width` | 當 `bb_width` < `sector_avg_width` 時進場，勝率較高 (買在盤整區) |
 
 > **小提醒**：
