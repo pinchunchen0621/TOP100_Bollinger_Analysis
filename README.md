@@ -49,8 +49,8 @@
 
 | 應用場景 | 你的變數 | 邏輯說明 |
 | :--- | :--- | :--- |
-| **Stop Loss** | `lower` (下軌) | 跌破下軌即停損 |
-| **Take Profit** | `upper` (上軌) | 碰到上軌或跌回上軌內再出 |
+| **Stop Loss** | `bb_lower` (下軌) | 跌破下軌即停損 |
+| **Take Profit** | `bb_upper` (上軌) | 碰到上軌或跌回上軌內再出 |
 | **Filter** | `bb_width` vs `sector_avg_width` | 當 `bb_width` < `sector_avg_width` 時進場，勝率較高 (買在盤整區) |
 
 > **小提醒**：
